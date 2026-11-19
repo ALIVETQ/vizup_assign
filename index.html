@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f6fc">
+  <title>First post onboarding · prototype</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Stage: centres the phone frame and the demo panel on desktop.
+       On a phone (<=700px) the frame disappears and the app goes full screen. -->
+  <div class="stage">
+    <div class="phone" id="phone">
+      <main class="app" id="app">
+        <!-- One screen at a time is rendered in here by navigate() -->
+        <div class="screen-root" id="screen-root"></div>
+        <!-- Reserved for bottom sheets (recovery screen comes in the next step) -->
+        <div class="sheet-layer" id="sheet-layer" hidden></div>
+        <!-- Toasts are announced politely to screen readers -->
+        <div class="toast-layer" id="toast-layer" role="status" aria-live="polite"></div>
+      </main>
+    </div>
+
+    <!-- Demo panel: filled in by renderDemoPanel() in app.js -->
+    <aside class="demo" id="demo-panel" aria-label="Demo panel"></aside>
+  </div>
+
+  <!-- Mobile only: opens the demo panel -->
+  <button class="demo-fab" id="demo-fab" type="button" aria-label="Open demo panel" aria-controls="demo-panel" aria-expanded="false">i</button>
+
+  <script src="app.js"></script>
+</body>
+</html>
